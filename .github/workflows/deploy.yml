@@ -17,7 +17,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 20
           cache: npm
 
       - name: Install dependencies
@@ -33,7 +33,7 @@ jobs:
       #     name: angular-build
       #     path: dist/xpertend/browser/index.html
       #     if-no-files-found: error
-      
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
