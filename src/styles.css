@@ -7,8 +7,6 @@
   --xpert-muted: #737b8e;
   --xpert-border: #e4e1ee;
   font-family: "DM Sans", "Segoe UI", Arial, sans-serif;
-  color: var(--xpert-ink);
-  background: #fcfbf9;
 }
 
 html,
