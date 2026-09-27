@@ -32,5 +32,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: angular-build
-          path: dist/angular-app/browser/index.html
+          path: dist/xpertend/browser/index.html
           if-no-files-found: error
