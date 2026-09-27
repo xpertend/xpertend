@@ -33,9 +33,10 @@ jobs:
       #     name: angular-build
       #     path: dist/xpertend/browser/index.html
       #     if-no-files-found: error
+      
       - name: Deploy to GitHub Pages
-        uses: angular-cli-ghpages@v2
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          build_dir: dist/xpertend/browser
+          publish_dir: dist/xpertend/browser
           deploy_branch: gh-pages
           cname: xpertend.com
