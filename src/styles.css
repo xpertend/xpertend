@@ -1,36 +1,33 @@
-@import "bootstrap/dist/css/bootstrap.min.css";
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap");
 @import "bootstrap/dist/css/bootstrap.min.css";
 @import "bootstrap-icons/font/bootstrap-icons.css";
 
 :root {
   --xpert-ink: #182132;
-  --xpert-orange: #df7045;
-  --xpert-muted: #74736f;
-  --xpert-border: #e4ded7;
-  font-family: "DM Sans", Arial, sans-serif;
+  --xpert-muted: #737b8e;
+  --xpert-border: #e4e1ee;
+  font-family: "DM Sans", "Segoe UI", Arial, sans-serif;
   color: var(--xpert-ink);
   background: #fcfbf9;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
+html,
+body {
+  min-height: 100%;
 }
 
 body {
   margin: 0;
+  font-family: inherit;
   background: #fcfbf9;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-.btn-primary {
-  --bs-btn-bg: var(--xpert-orange);
-  --bs-btn-border-color: var(--xpert-orange);
-  --bs-btn-hover-bg: #c95f38;
-  --bs-btn-hover-border-color: #c95f38;
-  --bs-btn-active-bg: #b95131;
-  --bs-btn-active-border-color: #b95131;
+button,
+a,
+input,
+textarea,
+select {
+  font: inherit;
 }
