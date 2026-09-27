@@ -1,394 +1,480 @@
 :host {
   display: block;
+  color: #182132;
+  font-family: 'DM Sans', 'Segoe UI', Arial, sans-serif;
 }
 
-.xpert-page {
-  min-height: 100vh;
-  color: var(--xpert-ink, #182132);
-  background: #f8f9fc;
+.astrology-page {
+  background: #fcfbf9;
 }
 
-.hero-panel {
+.container {
+  width: min(1320px, 100%);
+  margin: 0 auto;
+}
+
+.astrology-hero {
   position: relative;
   overflow: hidden;
-  border: 1px solid #dfe2ff;
-  border-radius: 1.5rem;
-  background: linear-gradient(135deg, #eef0ff 0%, #f7f7ff 100%);
+  padding: 56px 20px 62px;
+  background:
+    radial-gradient(
+      circle at 8% 14%,
+      rgba(102, 84, 217, 0.06),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 88% 12%,
+      rgba(22, 184, 166, 0.06),
+      transparent 28%
+    ),
+    linear-gradient(135deg, #effffb 0%, #f6f3ff 100%);
 }
 
-.hero-panel::after {
-  position: absolute;
-  right: -5rem;
-  bottom: -7rem;
-  width: 18rem;
-  height: 18rem;
-  border: 2rem solid rgba(91, 91, 214, 0.06);
-  border-radius: 50%;
-  content: "";
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.7fr);
+  align-items: center;
+  gap: 70px;
+  min-height: 320px;
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
-.hero-label,
-.section-label {
-  display: inline-block;
-  margin-bottom: 0.8rem;
-  color: #5757c7;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+.eyebrow,
+.heading-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #159f91;
+  font-size: 0.73rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-.hero-panel h1 {
-  max-width: 43rem;
-  margin: 0;
-  color: #182132;
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 500;
-  letter-spacing: -0.06em;
-  line-height: 0.98;
+.eyebrow {
+  padding: 7px 12px;
+  border: 1px solid rgba(22, 184, 166, 0.2);
+  border-radius: 999px;
+  background: #ffffff;
 }
 
-.hero-panel h1 span {
+.hero-content h1 {
+  max-width: 720px;
+  margin: 20px 0 16px;
+  color: #182132;
+  font-size: clamp(2rem, 3.8vw, 3.5rem);
+  font-weight: 750;
+  letter-spacing: -0.05em;
+  line-height: 1.08;
+}
+
+.hero-content h1 span,
+.hero-content h1 strong {
   display: block;
-  color: #5757c7;
 }
 
-.hero-text {
-  max-width: 37rem;
-  margin: 1.5rem 0 0;
-  color: #697184;
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.75rem;
-}
-
-.hero-actions .btn {
-  border-radius: 0.7rem;
-  padding: 0.75rem 1rem;
-  font-size: 0.88rem;
-  font-weight: 700;
-}
-
-.hero-actions .btn-primary {
-  --bs-btn-bg: #5b5bd6;
-  --bs-btn-border-color: #5b5bd6;
-  --bs-btn-hover-bg: #4646b6;
-  --bs-btn-hover-border-color: #4646b6;
-  --bs-btn-active-bg: #3e3ea4;
-  --bs-btn-active-border-color: #3e3ea4;
-}
-
-.hero-actions .btn-outline-primary {
-  --bs-btn-color: #5050be;
-  --bs-btn-border-color: #b9bcf3;
-  --bs-btn-hover-bg: #5b5bd6;
-  --bs-btn-hover-border-color: #5b5bd6;
-  --bs-btn-hover-color: #fff;
-}
-
-.hero-note {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  gap: 0.9rem;
-  padding: 1.25rem;
-  border: 1px solid #dfe2ff;
-  border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.8);
-}
-
-.note-icon {
-  display: flex;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  color: #fff;
-  background: #5b5bd6;
-  font-size: 0.85rem;
-  font-weight: 700;
-}
-
-.hero-note strong {
-  display: block;
-  margin-bottom: 0.4rem;
-  color: #182132;
-  font-size: 0.95rem;
-  font-weight: 700;
-}
-
-.hero-note p {
-  margin: 0;
-  color: #737b8e;
-  font-size: 0.82rem;
-  line-height: 1.55;
-}
-
-.content-section {
-  scroll-margin-top: 2rem;
-}
-
-.section-heading {
-  max-width: 40rem;
-  margin-bottom: 1.75rem;
-}
-
-.section-heading h2 {
-  margin: 0;
-  color: #182132;
-  font-size: clamp(1.8rem, 3vw, 2.7rem);
-  font-weight: 500;
+.hero-content h1 strong {
+  color: #6654d9;
+  font-size: clamp(1.65rem, 3vw, 2.85rem);
+  font-weight: 750;
   letter-spacing: -0.045em;
-  line-height: 1.05;
+  line-height: 1.15;
 }
 
-.section-heading p {
-  margin: 0.85rem 0 0;
-  color: #737b8e;
-  line-height: 1.7;
-}
-
-.process-card {
-  height: 100%;
-  padding: 1.5rem;
-  border: 1px solid #e3e6ef;
-  border-radius: 1.15rem;
-  background: #fff;
-  transition:
-    border-color 180ms ease,
-    box-shadow 180ms ease,
-    transform 180ms ease;
-}
-
-.process-card:hover {
-  border-color: #c8caff;
-  box-shadow: 0 0.9rem 2rem rgba(24, 33, 50, 0.08);
-  transform: translateY(-0.2rem);
-}
-
-.process-number {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.35rem;
-  height: 2.35rem;
-  margin-bottom: 1.25rem;
-  border-radius: 0.7rem;
-  color: #5050be;
-  background: #eef0ff;
-  font-size: 0.78rem;
-  font-weight: 800;
-}
-
-.process-card h3 {
-  margin: 0 0 0.65rem;
-  color: #182132;
-  font-size: 1.05rem;
-  font-weight: 700;
-}
-
-.process-card p {
+.hero-content p {
+  max-width: 650px;
   margin: 0;
   color: #737b8e;
-  font-size: 0.88rem;
+  font-size: 0.94rem;
   line-height: 1.65;
 }
 
-.responsibility-card {
-  height: 100%;
-  padding: clamp(1.5rem, 3vw, 2.25rem);
-  border-radius: 1.3rem;
-}
+/* Astrology visual using the same CA palette */
 
-.platform-card {
-  border: 1px solid #dfe2ff;
-  background: #eef0ff;
-}
-
-.astrologer-card {
-  color: #fff;
-  background: #182132;
-}
-
-.responsibility-card h2 {
-  max-width: 27rem;
-  margin: 0;
-  font-size: clamp(1.65rem, 3vw, 2.5rem);
-  font-weight: 500;
-  letter-spacing: -0.045em;
-  line-height: 1.05;
-}
-
-.platform-card h2 {
-  color: #182132;
-}
-
-.astrologer-card h2 {
-  color: #fff;
-}
-
-.responsibility-list {
-  display: grid;
-  gap: 0.8rem;
-  margin: 1.75rem 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.responsibility-list li {
+.astrology-card {
   position: relative;
-  padding-left: 1.55rem;
-  font-size: 0.88rem;
-  line-height: 1.55;
+  min-height: 275px;
+  overflow: hidden;
+  border: 1px solid rgba(102, 84, 217, 0.08);
+  border-radius: 30px;
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(255, 255, 255, 0.9),
+      transparent 27%
+    ),
+    linear-gradient(145deg, #f2f0ff 0%, #effffb 100%);
+  box-shadow: 0 18px 42px rgba(91, 79, 164, 0.08);
 }
 
-.platform-card .responsibility-list li {
-  color: #697184;
-}
-
-.astrologer-card .responsibility-list li {
-  color: #cbd1dc;
-}
-
-.responsibility-list li::before {
+.astrology-card::before,
+.astrology-card::after {
   position: absolute;
-  top: 0.35rem;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 0.95rem;
-  height: 0.95rem;
   border-radius: 50%;
-  content: "✓";
+  content: '';
+}
+
+.astrology-card::before {
+  top: -75px;
+  right: -55px;
+  width: 190px;
+  height: 190px;
+  background: rgba(22, 184, 166, 0.1);
+}
+
+.astrology-card::after {
+  bottom: -80px;
+  left: -50px;
+  width: 180px;
+  height: 180px;
+  background: rgba(102, 84, 217, 0.09);
+}
+
+.star {
+  position: absolute;
+  z-index: 2;
+  color: #d6a529;
+  font-size: 0.9rem;
+}
+
+.star-one {
+  top: 28px;
+  left: 32px;
+}
+
+.star-two {
+  top: 62px;
+  right: 42px;
+  color: #6654d9;
+  font-size: 0.7rem;
+}
+
+.star-three {
+  right: 30%;
+  bottom: 30px;
   font-size: 0.62rem;
-  font-weight: 800;
 }
 
-.platform-card .responsibility-list li::before {
-  color: #fff;
-  background: #5b5bd6;
+.moon {
+  position: absolute;
+  top: 28px;
+  right: 36px;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: #f7c967;
+  box-shadow: 0 0 0 10px rgba(247, 201, 103, 0.1);
 }
 
-.astrologer-card .responsibility-list li::before {
+.moon span {
+  position: absolute;
+  top: -6px;
+  right: -9px;
+  width: 89px;
+  height: 89px;
+  border-radius: 50%;
+  background: #f2f0ff;
+}
+
+.orbit {
+  position: absolute;
+  top: 49%;
+  left: 50%;
+  border: 1px solid rgba(102, 84, 217, 0.13);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotate(-20deg);
+}
+
+.orbit-one {
+  width: 235px;
+  height: 122px;
+}
+
+.orbit-two {
+  width: 275px;
+  height: 160px;
+  border-color: rgba(22, 184, 166, 0.14);
+  transform: translate(-50%, -50%) rotate(38deg);
+}
+
+.astrology-card-content {
+  position: absolute;
+  z-index: 4;
+  bottom: 22px;
+  left: 24px;
+  width: min(245px, calc(100% - 48px));
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 14px 28px rgba(69, 65, 126, 0.08);
+}
+
+.card-icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  margin-bottom: 13px;
+  place-items: center;
+  border-radius: 12px;
+  color: #6654d9;
+  background: #e9e5ff;
+  font-size: 1rem;
+}
+
+.astrology-card-content > span {
+  display: block;
+  margin-bottom: 5px;
+  color: #737b8e;
+  font-size: 0.7rem;
+}
+
+.astrology-card-content strong {
+  display: block;
   color: #182132;
-  background: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.card-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 13px;
+}
+
+.card-pills span {
+  padding: 4px 7px;
+  border: 1px solid rgba(102, 84, 217, 0.12);
+  border-radius: 999px;
+  color: #6654d9;
+  background: #f8f6ff;
+  font-size: 0.56rem;
+}
+
+/* Same spacing and card treatment as CA */
+
+.guidance-section {
+  padding: 50px 20px 76px;
+}
+
+.guidance-card {
+  padding: clamp(24px, 4vw, 52px);
+  border: 1px solid rgba(102, 84, 217, 0.08);
+  border-radius: 30px;
+  background: linear-gradient(135deg, #effffb, #f2f0ff);
+  box-shadow: 0 20px 55px rgba(35, 44, 75, 0.065);
+}
+
+.section-heading {
+  max-width: 700px;
+  margin-bottom: 30px;
+}
+
+.section-heading h2 {
+  max-width: 680px;
+  margin: 11px 0 10px;
+  color: #182132;
+  font-size: clamp(1.65rem, 2.7vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+}
+
+.section-heading p {
+  margin: 0;
+  color: #737b8e;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.guidance-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.guidance-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  min-height: 116px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 7px 21px rgba(45, 54, 86, 0.04);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.guidance-item:hover {
+  background: #ffffff;
+  box-shadow: 0 13px 28px rgba(45, 54, 86, 0.1);
+  transform: translateY(-3px);
+}
+
+.guidance-icon {
+  display: grid;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 13px;
+  color: #6654d9;
+  background: #e9e5ff;
+  font-size: 1.1rem;
+}
+
+.guidance-item h3 {
+  margin: 2px 0 6px;
+  color: #182132;
+  font-size: 0.94rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.guidance-item p {
+  margin: 0;
+  color: #737b8e;
+  font-size: 0.84rem;
+  line-height: 1.5;
 }
 
 .notice-box {
   display: flex;
-  gap: 1rem;
-  padding: 1.35rem 1.5rem;
-  border: 1px solid #e3e6ef;
-  border-left: 4px solid #5b5bd6;
-  border-radius: 0 1rem 1rem 0;
-  background: #fff;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 26px;
+  padding: 16px 18px;
+  border-left: 4px solid #6654d9;
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.72);
 }
 
-.notice-mark {
-  display: flex;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-  width: 1.8rem;
-  height: 1.8rem;
-  border-radius: 50%;
-  color: #fff;
-  background: #5b5bd6;
-  font-size: 0.8rem;
-  font-weight: 800;
-}
-
-.notice-box h2 {
-  margin: 0 0 0.45rem;
-  color: #182132;
-  font-size: 1rem;
-  font-weight: 700;
+.notice-box i {
+  margin-top: 2px;
+  color: #6654d9;
+  font-size: 1.05rem;
 }
 
 .notice-box p {
   margin: 0;
-  color: #737b8e;
+  color: #596276;
   font-size: 0.84rem;
-  line-height: 1.65;
+  line-height: 1.55;
 }
 
-.notice-box a {
-  display: inline-block;
-  margin-top: 0.75rem;
-  color: #5050be;
-  font-size: 0.84rem;
-  font-weight: 700;
-  text-decoration: none;
+@media (max-width: 900px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .hero-content {
+    max-width: 720px;
+  }
+
+  .astrology-card {
+    max-width: 620px;
+    min-height: 260px;
+  }
 }
 
-.notice-box a:hover {
-  color: #3e3ea4;
-  text-decoration: underline;
+@media (max-width: 767px) {
+  .astrology-hero {
+    padding: 44px 18px 50px;
+  }
+
+  .hero-content h1 {
+    margin-top: 18px;
+    font-size: clamp(2rem, 10vw, 3.1rem);
+  }
+
+  .hero-content h1 strong {
+    font-size: clamp(1.55rem, 8vw, 2.35rem);
+  }
+
+  .hero-content p {
+    font-size: 0.88rem;
+  }
+
+  .astrology-card {
+    min-height: 245px;
+    border-radius: 24px;
+  }
+
+  .moon {
+    top: 25px;
+    right: 28px;
+    width: 82px;
+    height: 82px;
+  }
+
+  .moon span {
+    width: 79px;
+    height: 79px;
+  }
+
+  .guidance-section {
+    padding: 36px 18px 58px;
+  }
+
+  .guidance-card {
+    padding: 23px 17px;
+    border-radius: 23px;
+  }
+
+  .section-heading {
+    margin-bottom: 24px;
+  }
+
+  .section-heading h2 {
+    font-size: 1.9rem;
+  }
+
+  .guidance-list {
+    grid-template-columns: 1fr;
+  }
 }
 
-@media (max-width: 767.98px) {
-  .hero-panel {
-    border-radius: 1.25rem;
+@media (max-width: 480px) {
+  .astrology-card-content {
+    left: 18px;
+    width: calc(100% - 36px);
+    padding: 15px;
   }
 
-  .hero-panel h1 {
-    font-size: clamp(2.45rem, 12vw, 3.6rem);
+  .guidance-item {
+    gap: 11px;
+    padding: 16px;
   }
 
-  .hero-text {
-    font-size: 0.98rem;
+  .guidance-icon {
+    flex-basis: 38px;
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    font-size: 1rem;
   }
 
-  .hero-actions {
-    flex-direction: column;
-    align-items: stretch;
+  .guidance-item h3 {
+    font-size: 0.91rem;
   }
 
-  .hero-actions .btn {
-    width: 100%;
-  }
-
-  .hero-note {
-    max-width: 30rem;
-  }
-
-  .responsibility-card {
-    padding: 1.35rem;
+  .guidance-item p {
+    font-size: 0.81rem;
   }
 
   .notice-box {
-    padding: 1.15rem;
-  }
-}
-
-@media (max-width: 420px) {
-  .hero-panel {
-    padding: 1.35rem !important;
-  }
-
-  .hero-note {
-    padding: 1rem;
-  }
-
-  .notice-box {
-    display: block;
-  }
-
-  .notice-mark {
-    margin-bottom: 0.85rem;
+    padding: 15px;
   }
 }

@@ -34,7 +34,7 @@
   background: rgb(22 184 166 / 8%);
   filter: blur(2rem);
   pointer-events: none;
-  content: "";
+  content: '';
 }
 
 .site-header .container,
@@ -147,9 +147,11 @@
 }
 
 .nav-link:hover,
+.nav-link:focus-visible,
 .nav-link.active {
-  color: #6654d9;
-  background: #eeecff;
+  color: #f28c28;
+  background: #fff2e5;
+  outline: none;
 }
 
 .call-button {

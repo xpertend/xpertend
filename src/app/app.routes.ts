@@ -26,6 +26,13 @@ export const routes: Routes = [
             (module) => module.AstrologyXpertend,
           ),
       },
+      {
+        path: 'heavy-xpertend',
+        title: 'Heavy Earth Moving Vehicle Connect | Xpertend',
+        loadComponent: () =>
+          import('./heavy-xpertend/heavy').then(
+            (module) => module.HeavyXpertend)
+      }
     ],
   },
   {
