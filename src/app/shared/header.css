@@ -1,0 +1,267 @@
+:host {
+  display: block;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 8% 0%,
+      rgb(22 184 166 / 13%),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 92% 0%,
+      rgb(102 84 217 / 14%),
+      transparent 32%
+    ),
+    rgb(252 251 249 / 94%);
+  border-bottom: 1px solid rgb(102 84 217 / 14%);
+  box-shadow: 0 0.35rem 1.2rem rgb(102 84 217 / 6%);
+  backdrop-filter: blur(16px);
+}
+
+.site-header::before {
+  position: absolute;
+  top: -4rem;
+  left: 32%;
+  width: 14rem;
+  height: 7rem;
+  border-radius: 50%;
+  background: rgb(22 184 166 / 8%);
+  filter: blur(2rem);
+  pointer-events: none;
+  content: "";
+}
+
+.site-header .container,
+.site-header .navbar {
+  position: relative;
+  z-index: 1;
+}
+
+.xpertend-brand {
+  display: inline-flex;
+  align-items: center;
+  color: var(--xpert-ink);
+  text-decoration: none;
+}
+
+.xpertend-brand:hover {
+  color: var(--xpert-ink);
+}
+
+.logo-mark {
+  position: relative;
+  display: grid;
+  width: 2.9rem;
+  height: 2.9rem;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(135deg, #16b8a6, #6654d9);
+  border: 3px solid #fff;
+  border-radius: 1rem 1rem 1rem 0.25rem;
+  box-shadow: 0 0.35rem 0 #b6d8d5;
+  transform: rotate(-7deg);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.xpertend-brand:hover .logo-mark {
+  box-shadow: 0 0.55rem 0 #b6d8d5;
+  transform: rotate(0deg) scale(1.06);
+}
+
+.logo-x {
+  color: #fff;
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1;
+  transform: rotate(7deg);
+}
+
+.logo-spark .spark {
+  position: absolute;
+  top: -0.6rem;
+  right: -0.55rem;
+  display: grid;
+  width: 1.35rem;
+  height: 1.35rem;
+  place-items: center;
+  color: #6654d9;
+  background: #f7c967;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1;
+  transform: rotate(7deg);
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease;
+}
+
+.xpertend-brand:hover .logo-spark .spark {
+  background: #fff;
+  transform: rotate(20deg) scale(1.1);
+}
+
+.header-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.nav-link {
+  padding: 0.55rem 0.8rem !important;
+  color: var(--xpert-ink);
+  border-radius: 0.5rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #6654d9;
+  background: #eeecff;
+}
+
+.call-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 2.45rem;
+  margin-left: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid rgb(22 184 166 / 28%);
+  border-radius: 0.85rem;
+  color: #5142bd;
+  background: linear-gradient(
+    135deg,
+    rgb(235 255 250 / 95%),
+    rgb(241 238 255 / 95%)
+  );
+  box-shadow:
+    0 0.35rem 0.8rem rgb(22 184 166 / 12%),
+    0 0.35rem 0.8rem rgb(102 84 217 / 12%);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    border-color 180ms ease,
+    color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.call-button:hover {
+  border-color: rgb(102 84 217 / 38%);
+  color: #4335a3;
+  background: linear-gradient(135deg, #dcfff7, #e8e4ff);
+  box-shadow:
+    0 0.55rem 1rem rgb(22 184 166 / 18%),
+    0 0.55rem 1rem rgb(102 84 217 / 18%);
+  transform: translateY(-2px);
+}
+
+.call-button:focus-visible {
+  outline: 3px solid rgb(102 84 217 / 22%);
+  outline-offset: 3px;
+}
+
+.call-button .phone-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #16a895;
+  background: transparent;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.call-button .phone-icon .bi {
+  display: block;
+  line-height: 1;
+}
+
+@media (max-width: 767px) {
+  .site-header .container {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .navbar {
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .header-menu {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: 0;
+    padding-bottom: 0.4rem;
+  }
+
+  .nav-link {
+    padding: 0.4rem 0.55rem !important;
+    font-size: 0.78rem;
+  }
+
+  .call-button {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .logo-mark {
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+
+  .logo-x {
+    font-size: 1.6rem;
+  }
+
+  .logo-spark .spark {
+    top: -0.5rem;
+    right: -0.45rem;
+    width: 1.15rem;
+    height: 1.15rem;
+    border-width: 2px;
+    font-size: 0.6rem;
+  }
+
+  .header-menu {
+    gap: 0.2rem;
+  }
+
+  .nav-link {
+    padding-right: 0.35rem !important;
+    padding-left: 0.35rem !important;
+    font-size: 0.72rem;
+  }
+
+  .call-button {
+    gap: 0.35rem;
+    padding: 0.35rem 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .call-button .phone-icon {
+    font-size: 0.9rem;
+  }
+}

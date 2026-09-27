@@ -1,0 +1,295 @@
+:host {
+  display: block;
+}
+
+.home-page {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: #17243b;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 0.65rem;
+  color: #4567a8;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.service-card {
+  position: relative;
+  display: block;
+  min-height: 17rem;
+  padding: 1.65rem;
+  overflow: hidden;
+  color: inherit;
+  border-radius: 1.25rem;
+  text-decoration: none;
+  transition:
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.service-card:hover {
+  color: inherit;
+  box-shadow: 0 1rem 2rem rgb(23 36 59 / 15%);
+  transform: translateY(-0.25rem);
+}
+
+.ca-service {
+  background: linear-gradient(135deg, #e6f1ff, #c5dbf6);
+}
+
+.astrology-service {
+  background: linear-gradient(135deg, #eee9ff, #d5cbf5);
+}
+
+.service-icon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-bottom: 1.5rem;
+  place-items: center;
+  color: #fff;
+  background: #4567a8;
+  border-radius: 0.85rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.astrology-service .service-icon {
+  background: #7356ad;
+  font-size: 1.1rem;
+}
+
+.service-card .eyebrow {
+  position: relative;
+  z-index: 1;
+}
+
+.astrology-service .eyebrow,
+.astrology-service strong {
+  color: #7356ad;
+}
+
+.service-card h3 {
+  position: relative;
+  z-index: 1;
+  max-width: 23rem;
+  margin: 0;
+  color: #17243b;
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.3;
+}
+
+.service-card p {
+  position: relative;
+  z-index: 1;
+  max-width: 27rem;
+  margin-top: 1rem;
+  color: #263752;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.service-card strong {
+  position: absolute;
+  bottom: 1.65rem;
+  left: 1.65rem;
+  z-index: 1;
+  color: #4567a8;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.trust-section {
+  padding: 2rem;
+  overflow: hidden;
+  border: 1px solid #dce5f2;
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(circle at 100% 0%, #dce9ff 0, transparent 26%),
+    linear-gradient(135deg, #f8fbff, #edf3fb);
+}
+
+.trust-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-bottom: 1rem;
+}
+
+.trust-heading h2 {
+  margin: 0;
+  color: #17243b;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+}
+
+.trust-heading h2 span {
+  color: #4567a8;
+}
+
+.trust-heading > p {
+  max-width: 26rem;
+  margin: 0;
+  color: #65738a;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: right;
+}
+
+.trust-card {
+  position: relative;
+  height: 100%;
+  min-height: 12.5rem;
+  padding: 1.35rem;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 80%);
+  border-radius: 1rem;
+  background: rgb(255 255 255 / 88%);
+  box-shadow: 0 0.5rem 1.5rem rgb(23 36 59 / 6%);
+  transition:
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.trust-card:hover {
+  box-shadow: 0 1rem 2rem rgb(23 36 59 / 12%);
+  transform: translateY(-0.2rem);
+}
+
+.trust-icon {
+  display: grid;
+  width: 2.35rem;
+  height: 2.35rem;
+  margin-bottom: 1.2rem;
+  place-items: center;
+  border-radius: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.trust-card h3 {
+  margin-bottom: 0.55rem;
+  color: #17243b;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.trust-card p {
+  margin: 0;
+  color: #65738a;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.trust-card-blue {
+  color: #4567a8;
+}
+
+.trust-card-blue .trust-icon {
+  color: #fff;
+  background: #4567a8;
+}
+
+.trust-card-purple {
+  color: #7356ad;
+}
+
+.trust-card-purple .trust-icon {
+  color: #fff;
+  background: #7356ad;
+}
+
+.trust-card-teal {
+  color: #168f86;
+}
+
+.trust-card-teal .trust-icon {
+  color: #fff;
+  background: #168f86;
+}
+
+.trust-card-gold {
+  color: #bf8b22;
+}
+
+.trust-card-gold .trust-icon {
+  color: #fff;
+  background: #d6a63e;
+}
+
+.notice-box {
+  padding: 1.25rem;
+  border-left: 4px solid #4567a8;
+  color: #52627a;
+  background: #f0f5fc;
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.home-page footer {
+  font-size: 0.78rem;
+}
+
+.home-page footer a {
+  color: #4567a8;
+}
+
+@media (max-width: 767px) {
+  .service-card {
+    min-height: 16rem;
+  }
+
+  .trust-section {
+    padding: 1.25rem;
+    border-radius: 1.25rem;
+  }
+
+  .trust-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .trust-heading > p {
+    text-align: left;
+  }
+}
+
+@media (max-width: 420px) {
+  .service-card {
+    min-height: 15rem;
+    padding: 1.35rem;
+  }
+
+  .service-card strong {
+    bottom: 1.35rem;
+    left: 1.35rem;
+  }
+
+  .trust-card {
+    min-height: auto;
+  }
+}
