@@ -200,6 +200,10 @@
   outline-offset: 3px;
 }
 
+.email-button {
+  margin-left: 0;
+}
+
 .phone-icon {
   display: inline-flex;
   align-items: center;
@@ -210,6 +214,20 @@
 }
 
 .phone-icon .bi {
+  display: block;
+  line-height: 1;
+}
+
+.email-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #16a895;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.email-icon .bi {
   display: block;
   line-height: 1;
 }
