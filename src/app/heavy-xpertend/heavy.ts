@@ -7,6 +7,6 @@ import { Header } from '../shared/header';
   standalone: true,
   imports: [Header, Footer],
   templateUrl: './heavy.html',
-  styleUrl: './heavy.css'
+  styleUrl: './heavy.css',
 })
 export class HeavyXpertend {}

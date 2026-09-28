@@ -148,7 +148,7 @@
   font-size: 1.25rem;
 }
 
-.hero-card-content > span {
+.hero-card-content>span {
   display: block;
   margin-bottom: 5px;
   color: #737b8e;
