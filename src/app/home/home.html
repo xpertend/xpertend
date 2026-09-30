@@ -4,22 +4,64 @@
       <a class="brand-logo-wrap" href="#top" aria-label="Xpertend home">
         <svg class="brand-mark-svg" viewBox="0 0 100 100" fill="none" aria-hidden="true">
           <defs>
-            <linearGradient id="xpIndigoGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6366F1" /><stop offset="100%" stop-color="#4338CA" /></linearGradient>
-            <linearGradient id="xpAmberGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F59E0B" /><stop offset="100%" stop-color="#D97706" /></linearGradient>
+            <linearGradient id="xpIndigoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#6366F1" />
+              <stop offset="100%" stop-color="#4338CA" />
+            </linearGradient>
+            <linearGradient id="xpAmberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#F59E0B" />
+              <stop offset="100%" stop-color="#D97706" />
+            </linearGradient>
           </defs>
-          <rect x="15" y="15" width="70" height="70" rx="16" transform="rotate(45 50 50)" stroke="#0284C7" stroke-width="3" stroke-dasharray="6 4" opacity="0.7" />
-          <path d="M24 24L76 76" stroke="url(#xpIndigoGrad)" stroke-width="12" stroke-linecap="round" />
-          <path d="M76 24L24 76" stroke="url(#xpAmberGrad)" stroke-width="12" stroke-linecap="round" />
+          <rect
+            x="15"
+            y="15"
+            width="70"
+            height="70"
+            rx="16"
+            transform="rotate(45 50 50)"
+            stroke="#0284C7"
+            stroke-width="3"
+            stroke-dasharray="6 4"
+            opacity="0.7"
+          />
+          <path
+            d="M24 24L76 76"
+            stroke="url(#xpIndigoGrad)"
+            stroke-width="12"
+            stroke-linecap="round"
+          />
+          <path
+            d="M76 24L24 76"
+            stroke="url(#xpAmberGrad)"
+            stroke-width="12"
+            stroke-linecap="round"
+          />
           <circle cx="50" cy="50" r="9" fill="#0F172A" />
           <circle cx="50" cy="50" r="4" fill="#38BDF8" />
         </svg>
-        <span><strong class="brand-wordmark">XPERT<span>END</span></strong><small class="brand-tagline">Coordination Desk</small></span>
+        <span
+          ><strong class="brand-wordmark">XPERT<span>END</span></strong
+          ><small class="brand-tagline">Coordination Desk</small></span
+        >
       </a>
 
       <div class="header-actions d-flex align-items-center flex-shrink-0">
-        <a href="tel:+917980260077" class="contact-badge badge-call"><i class="bi bi-telephone-fill"></i><span class="desktop-only">+91 79802 60077</span><span class="mobile-only">Call</span></a>
-        <a href="mailto:xpertend@gmail.com" class="contact-badge badge-mail"><i class="bi bi-envelope-fill"></i><span class="desktop-only">xpertend@gmail.com</span><span class="mobile-only">Email</span></a>
-        <a href="https://wa.me/917980260077" target="_blank" rel="noreferrer" class="contact-badge badge-wa"><i class="bi bi-whatsapp"></i><span class="desktop-only">WhatsApp</span></a>
+        <a href="tel:+917980260077" class="contact-badge badge-call"
+          ><i class="bi bi-telephone-fill"></i><span class="desktop-only">+91 79802 60077</span
+          ><span class="mobile-only">Call</span></a
+        >
+        <a href="mailto:xpertend@gmail.com" class="contact-badge badge-mail"
+          ><i class="bi bi-envelope-fill"></i><span class="desktop-only">xpertend@gmail.com</span
+          ><span class="mobile-only">Email</span></a
+        >
+        <a
+          href="https://wa.me/917980260077"
+          target="_blank"
+          rel="noreferrer"
+          class="contact-badge badge-wa"
+          ><i class="bi bi-whatsapp"></i><span class="desktop-only">WhatsApp</span></a
+        >
       </div>
     </div>
   </div>
@@ -30,13 +72,30 @@
     <div class="container container-xl">
       <div class="row align-items-center g-4 g-xl-5">
         <div class="col-12 col-lg-7">
-          <span class="section-badge"><i class="bi bi-lightning-charge-fill"></i> Offline Coordination Specialist</span>
+          <span class="section-badge"
+            ><i class="bi bi-lightning-charge-fill"></i> Offline Coordination Specialist</span
+          >
           <h1>High-Trust Independent Services, Managed Directly.</h1>
-          <p class="hero-copy">Single administrative desk connecting you directly with verified Chartered Accountants, Heavy Equipment site technicians, and Astrology advisors.</p>
+          <p class="hero-copy">
+            Single administrative desk connecting you directly with verified Chartered Accountants,
+            Heavy Equipment site technicians, and Astrology advisors.
+          </p>
           <div class="row row-cols-3 g-2 g-sm-3 mt-3 mt-lg-4">
-            <div class="col"><div class="trust-item"><i class="bi bi-check-circle-fill"></i><strong>Verified Partners</strong></div></div>
-            <div class="col"><div class="trust-item"><i class="bi bi-clock-history"></i><strong>Rapid Response</strong></div></div>
-            <div class="col"><div class="trust-item"><i class="bi bi-shield-check"></i><strong>Direct Route</strong></div></div>
+            <div class="col">
+              <div class="trust-item">
+                <i class="bi bi-check-circle-fill"></i><strong>Verified Partners</strong>
+              </div>
+            </div>
+            <div class="col">
+              <div class="trust-item">
+                <i class="bi bi-clock-history"></i><strong>Rapid Response</strong>
+              </div>
+            </div>
+            <div class="col">
+              <div class="trust-item">
+                <i class="bi bi-shield-check"></i><strong>Direct Route</strong>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -46,16 +105,97 @@
             <p>Provide details below for a direct callback.</p>
             @if (!submitted) {
               <form #leadForm="ngForm" (ngSubmit)="submitForm(leadForm)" class="row g-2">
-                <div class="col-12"><label for="name" class="form-label">Full Name *</label><input id="name" name="name" type="text" class="form-control" placeholder="e.g. Vikramaditya Roy" required ngModel /></div>
-                <div class="col-12"><label for="phone" class="form-label">Phone Number *</label><input id="phone" name="phone" type="tel" class="form-control" placeholder="e.g. +91 79802 60077" required ngModel /></div>
-                <div class="col-12"><label for="email" class="form-label">Email Address (Optional)</label><input id="email" name="email" type="email" class="form-control" placeholder="e.g. name@domain.com" ngModel /></div>
-                <div class="col-12"><label for="service" class="form-label">Service Vertical *</label><select id="service" name="service" class="form-select" required [(ngModel)]="selectedService"><option value="" disabled>Choose service category...</option><option value="ca">CA Connect (GST, Income Tax &amp; Audits)</option><option value="heavy">Heavy Machinery (Rentals, Maintenance &amp; Parts)</option><option value="astrology">Astrology Connect (Kundali, Vastu &amp; Advice)</option></select></div>
-                <div class="col-12"><label for="location" class="form-label">Location / City *</label><input id="location" name="location" type="text" class="form-control" placeholder="e.g. Kolkata / Yard Location" required ngModel /></div>
-                <div class="col-12"><button class="btn btn-gradient w-100" type="submit" [disabled]="leadForm.invalid || isSubmitting"><i class="bi" [class.bi-send-fill]="!isSubmitting" [class.bi-hourglass-split]="isSubmitting"></i> {{ isSubmitting ? 'Sending Request...' : 'Submit Callback Request' }}</button></div>
+                <div class="col-12">
+                  <label for="name" class="form-label">Full Name *</label
+                  ><input
+                    id="name"
+                    name="name"
+                    type="text"
+                    class="form-control"
+                    placeholder="e.g. Vikramaditya Roy"
+                    required
+                    ngModel
+                  />
+                </div>
+                <div class="col-12">
+                  <label for="phone" class="form-label">Phone Number *</label
+                  ><input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    class="form-control"
+                    placeholder="e.g. +91 79802 60077"
+                    required
+                    ngModel
+                  />
+                </div>
+                <div class="col-12">
+                  <label for="email" class="form-label">Email Address (Optional)</label
+                  ><input
+                    id="email"
+                    name="email"
+                    type="email"
+                    class="form-control"
+                    placeholder="e.g. name@domain.com"
+                    ngModel
+                  />
+                </div>
+                <div class="col-12">
+                  <label for="service" class="form-label">Service Vertical *</label
+                  ><select
+                    id="service"
+                    name="service"
+                    class="form-select"
+                    required
+                    [(ngModel)]="selectedService"
+                  >
+                    <option value="" disabled>Choose service category...</option>
+                    <option value="ca">CA Connect (GST, Income Tax &amp; Audits)</option>
+                    <option value="heavy">
+                      Heavy Machinery (Rentals, Maintenance &amp; Parts)
+                    </option>
+                    <option value="astrology">
+                      Astrology Connect (Kundali, Vastu &amp; Advice)
+                    </option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label for="location" class="form-label">Location / City *</label
+                  ><input
+                    id="location"
+                    name="location"
+                    type="text"
+                    class="form-control"
+                    placeholder="e.g. Kolkata / Yard Location"
+                    required
+                    ngModel
+                  />
+                </div>
+                <div class="col-12">
+                  <button
+                    class="btn btn-gradient w-100"
+                    type="submit"
+                    [disabled]="leadForm.invalid || isSubmitting"
+                  >
+                    <i
+                      class="bi"
+                      [class.bi-send-fill]="!isSubmitting"
+                      [class.bi-hourglass-split]="isSubmitting"
+                    ></i>
+                    {{ isSubmitting ? 'Sending Request...' : 'Submit Callback Request' }}
+                  </button>
+                </div>
               </form>
-              @if (submitError) { <div class="status-error" role="alert"><i class="bi bi-exclamation-triangle-fill"></i> {{ submitError }}</div> }
+              @if (submitError) {
+                <div class="status-error" role="alert">
+                  <i class="bi bi-exclamation-triangle-fill"></i> {{ submitError }}
+                </div>
+              }
             } @else {
-              <div class="status-alert" role="status"><i class="bi bi-check-circle-fill"></i> Request received. A coordinator will reach out shortly.</div>
+              <div class="status-alert" role="status">
+                <i class="bi bi-check-circle-fill"></i> Request received. A coordinator will reach
+                out shortly.
+              </div>
             }
           </div>
         </div>
@@ -65,11 +205,43 @@
 
   <section class="services-section" id="services">
     <div class="container container-xl">
-      <div class="section-heading mb-4 mb-lg-5"><span class="section-badge amber-badge">Service Verticals</span><h2>Independent Partner Desks</h2><p>Select a service to request callback or initiate WhatsApp consultation directly.</p></div>
+      <div class="section-heading mb-4 mb-lg-5">
+        <span class="section-badge amber-badge">Service Verticals</span>
+        <h2>Independent Partner Desks</h2>
+        <p>Select a service to request callback or initiate WhatsApp consultation directly.</p>
+      </div>
       <div class="row row-cols-1 row-cols-lg-3 g-4">
         @for (service of services; track service.key) {
-          <div class="col"><article class="vibrant-card h-100"><div class="icon-badge" [class]="service.iconClass"><i [class]="service.icon"></i></div><h3>{{ service.title }}</h3><p>{{ service.description }}</p><ul>@for (item of service.items; track item) {<li><i class="bi bi-check-circle-fill"></i> {{ item }}</li>}</ul><div class="card-actions mt-auto"><button type="button" (click)="selectService(service.key)" class="btn btn-outline-dark"><i class="bi bi-pencil-square"></i> {{ service.action }}</button><a href="https://wa.me/917980260077" target="_blank" rel="noreferrer" class="btn btn-card-wa"><i class="bi bi-whatsapp"></i> WhatsApp Desk</a></div></article></div>
-  }
+          <div class="col">
+            <article class="vibrant-card h-100">
+              <div class="icon-badge" [class]="service.iconClass">
+                <i [class]="service.icon"></i>
+              </div>
+              <h3>{{ service.title }}</h3>
+              <p>{{ service.description }}</p>
+              <ul>
+                @for (item of service.items; track item) {
+                  <li><i class="bi bi-check-circle-fill"></i> {{ item }}</li>
+                }
+              </ul>
+              <div class="card-actions mt-auto">
+                <button
+                  type="button"
+                  (click)="selectService(service.key)"
+                  class="btn btn-outline-dark"
+                >
+                  <i class="bi bi-pencil-square"></i> {{ service.action }}</button
+                ><a
+                  href="https://wa.me/917980260077"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="btn btn-card-wa"
+                  ><i class="bi bi-whatsapp"></i> WhatsApp Desk</a
+                >
+              </div>
+            </article>
+          </div>
+        }
       </div>
     </div>
   </section>
@@ -78,11 +250,104 @@
 <footer class="site-footer">
   <div class="container container-xl">
     <div class="row g-4">
-      <div class="col-12 col-lg-4"><div class="footer-brand">XPERT<span>END</span></div><p>Xpertend acts as a unified administrative desk connecting individuals and enterprise clients directly with certified Chartered Accountants, heavy machinery site dispatch technicians, and professional Astrology advisors.</p><span class="desk-hours"><i class="bi bi-clock-history"></i> Desk Hours: Mon - Sat (9 AM - 8 PM)</span></div>
-      <div class="col-6 col-md-4 col-lg-2"><h2>Services</h2><a href="#services" (click)="selectService('ca')">CA Connect Desk</a><a href="#services" (click)="selectService('heavy')">Heavy Machinery Dispatch</a><a href="#services" (click)="selectService('astrology')">Astrology Consultation</a><a href="#call-back">Request Callback</a></div>
-      <div class="col-6 col-md-4 col-lg-3"><h2>Direct Reach</h2><p><i class="bi bi-telephone"></i><a href="tel:+917980260077">+91 79802 60077</a></p><p><i class="bi bi-envelope"></i><a href="mailto:xpertend@gmail.com">xpertend@gmail.com</a></p><p><i class="bi bi-geo-alt"></i>Kolkata, West Bengal, India</p></div>
-      <div class="col-12 col-md-4 col-lg-3"><h2>Immediate Support</h2><p>Need immediate dispatch or emergency CA support? Connect live on WhatsApp.</p><a class="btn footer-whatsapp w-100" href="https://wa.me/917980260077" target="_blank" rel="noreferrer"><i class="bi bi-whatsapp"></i> Chat With Coordinator</a></div>
+      <div class="col-12 col-lg-4">
+        <div class="footer-brand">XPERT<span>END</span></div>
+        <p>
+          Xpertend acts as a unified administrative desk connecting individuals and enterprise
+          clients directly with certified Chartered Accountants, heavy machinery site dispatch
+          technicians, and professional Astrology advisors.
+        </p>
+        <span class="desk-hours"
+          ><i class="bi bi-clock-history" aria-hidden="true"></i> Desk Hours: Mon - Sat (9 AM - 8
+          PM)</span
+        >
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 footer-links">
+        <h2>Services</h2>
+        <a href="#services" (click)="selectService('ca')"
+          ><i class="bi bi-file-earmark-text-fill" aria-hidden="true"></i> CA Connect Desk</a
+        ><a href="#services" (click)="selectService('heavy')"
+          ><i class="bi bi-tools" aria-hidden="true"></i> Heavy Machinery Dispatch</a
+        ><a href="#services" (click)="selectService('astrology')"
+          ><i class="bi bi-moon-stars-fill" aria-hidden="true"></i> Astrology Consultation</a
+        ><a href="#call-back"
+          ><i class="bi bi-telephone-inbound-fill" aria-hidden="true"></i> Request Callback</a
+        >
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <h2>Direct Reach</h2>
+        <p>
+          <i class="bi bi-telephone" aria-hidden="true"></i
+          ><a href="tel:+917980260077">+91 79802 60077</a>
+        </p>
+        <p>
+          <i class="bi bi-envelope" aria-hidden="true"></i
+          ><a href="mailto:xpertend@gmail.com">xpertend@gmail.com</a>
+        </p>
+        <p><i class="bi bi-geo-alt" aria-hidden="true"></i>Kolkata, West Bengal, India</p>
+      </div>
+      <div class="col-12 col-md-4 col-lg-3">
+        <h2>Immediate Support</h2>
+        <p>Need immediate dispatch or emergency CA support? Connect live on WhatsApp.</p>
+        <a
+          class="btn footer-whatsapp w-100"
+          href="https://wa.me/917980260077"
+          target="_blank"
+          rel="noreferrer"
+          ><i class="bi bi-whatsapp" aria-hidden="true"></i> Chat With Coordinator</a
+        >
+      </div>
     </div>
-    <div class="footer-bottom mt-4 pt-3">© 2026 Xpertend Coordination Desk. All rights reserved.</div>
+    <div class="footer-social mt-4 pt-4">
+      <span class="footer-social-label">Share Xpertend</span>
+      <div class="share-icons">
+        <a
+          [href]="whatsappShareUrl"
+          target="_blank"
+          rel="noreferrer"
+          class="share-icon share-wa"
+          aria-label="Share on WhatsApp"
+          ><i class="bi bi-whatsapp" aria-hidden="true"></i
+        ></a>
+        <a
+          [href]="facebookShareUrl"
+          target="_blank"
+          rel="noreferrer"
+          class="share-icon share-fb"
+          aria-label="Share on Facebook"
+          ><i class="bi bi-facebook" aria-hidden="true"></i
+        ></a>
+        <button
+          type="button"
+          class="share-icon share-ig"
+          (click)="shareToInstagram()"
+          aria-label="Share on Instagram"
+        >
+          <i class="bi bi-instagram" aria-hidden="true"></i>
+        </button>
+        <a
+          [href]="twitterShareUrl"
+          target="_blank"
+          rel="noreferrer"
+          class="share-icon share-x"
+          aria-label="Share on X"
+          ><i class="bi bi-twitter-x" aria-hidden="true"></i
+        ></a>
+        <a
+          [href]="linkedInShareUrl"
+          target="_blank"
+          rel="noreferrer"
+          class="share-icon share-li"
+          aria-label="Share on LinkedIn"
+          ><i class="bi bi-linkedin" aria-hidden="true"></i
+        ></a>
+      </div>
+      @if (linkCopied) {
+        <span class="copy-toast" role="status">Link copied!</span>
+      }
+    </div>
+    <div class="footer-bottom mt-4 pt-3">
+      © 2026 Xpertend Coordination Desk. All rights reserved.
+    </div>
   </div>
 </footer>
