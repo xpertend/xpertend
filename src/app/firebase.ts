@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { initializeFirestore } from 'firebase/firestore';
+import { Analytics, isSupported, getAnalytics } from 'firebase/analytics';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBiqGEGNfCTtaQBaUuNDFniSBvQHeXXuek',
@@ -17,3 +18,13 @@ export const auth = getAuth(firebaseApp);
 export const firestore = initializeFirestore(firebaseApp, {
   experimentalAutoDetectLongPolling: true,
 });
+
+// Analytics is browser-only and unsupported in some environments, so init is deferred and optional.
+export let analytics: Analytics | undefined;
+isSupported()
+  .then((supported) => {
+    if (supported) {
+      analytics = getAnalytics(firebaseApp);
+    }
+  })
+  .catch(() => undefined);
