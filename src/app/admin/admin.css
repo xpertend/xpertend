@@ -1,0 +1,282 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  color: #172033;
+}
+
+.admin-shell {
+  min-height: 100vh;
+  padding: 48px 20px 72px;
+  background: radial-gradient(circle at 15% 0%, #e6f4ff 0, transparent 34%), linear-gradient(145deg, #f8fbff 0%, #eef3f7 100%);
+}
+
+.admin-container {
+  width: min(100%, 1060px);
+  margin: 0 auto;
+}
+
+.login-panel,
+.empty-panel,
+.request-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #d8e2ea;
+  box-shadow: 0 18px 45px rgba(32, 58, 80, 0.09);
+}
+
+.login-panel {
+  width: min(100%, 460px);
+  margin: 8vh auto 0;
+  padding: 38px;
+  border-radius: 18px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #1476a8;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.login-mark {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  margin: 38px 0 20px;
+  place-items: center;
+  border-radius: 16px;
+  color: #fff;
+  background: linear-gradient(135deg, #087ea4, #075985);
+  font-size: 1.45rem;
+}
+
+.eyebrow,
+.service-label {
+  color: #13769f;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  letter-spacing: 0;
+}
+
+.intro {
+  color: #607080;
+  line-height: 1.6;
+}
+
+.login-form {
+  display: grid;
+  gap: 9px;
+  margin-top: 28px;
+}
+
+.login-form label {
+  margin-top: 10px;
+  color: #425467;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #c8d5df;
+  border-radius: 8px;
+  color: #172033;
+  background: #fff;
+  font: inherit;
+}
+
+.login-form input:focus {
+  border-color: #0f8bb8;
+  outline: 3px solid rgba(15, 139, 184, 0.15);
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.primary-button {
+  margin-top: 18px;
+  padding: 13px 16px;
+  border: 0;
+  color: #fff;
+  background: #087ea4;
+}
+
+.primary-button:disabled,
+.secondary-button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.error-message {
+  margin: 20px 0 0;
+  padding: 12px 14px;
+  border: 1px solid #f0b7b7;
+  border-radius: 8px;
+  color: #9b2929;
+  background: #fff3f3;
+  font-size: 0.9rem;
+}
+
+.admin-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 34px;
+}
+
+.admin-header .eyebrow {
+  display: block;
+  margin-top: 34px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.secondary-button {
+  padding: 10px 14px;
+  border: 1px solid #bfd0dc;
+  color: #20516d;
+  background: #fff;
+}
+
+.request-toolbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  color: #718293;
+  font-size: 0.9rem;
+}
+
+.request-toolbar strong {
+  color: #243b53;
+}
+
+.request-list {
+  display: grid;
+  gap: 14px;
+}
+
+.request-card {
+  padding: 24px;
+  border-radius: 14px;
+}
+
+.request-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.request-topline h2 {
+  margin: 7px 0 0;
+  font-size: 1.35rem;
+}
+
+.request-date {
+  color: #687b8d;
+  font-size: 0.86rem;
+  white-space: nowrap;
+}
+
+.request-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin-top: 20px;
+  color: #425467;
+  font-size: 0.92rem;
+}
+
+.request-details a {
+  color: #087ea4;
+  text-decoration: none;
+}
+
+.request-details i {
+  margin-right: 7px;
+  color: #ec8b22;
+}
+
+.request-id {
+  margin-top: 20px;
+  color: #9aa8b4;
+  font-family: monospace;
+  font-size: 0.72rem;
+}
+
+.empty-panel {
+  padding: 64px 24px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.empty-panel > i {
+  color: #1385ad;
+  font-size: 2.2rem;
+}
+
+.empty-panel h2 {
+  margin: 18px 0 8px;
+  font-size: 1.35rem;
+}
+
+.empty-panel p {
+  margin-bottom: 0;
+  color: #718293;
+}
+
+@media (max-width: 640px) {
+  .admin-shell {
+    padding: 24px 14px 52px;
+  }
+
+  .login-panel {
+    padding: 26px 22px;
+  }
+
+  .admin-header,
+  .request-topline {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .header-actions {
+    width: 100%;
+  }
+
+  .secondary-button {
+    flex: 1;
+  }
+
+  .request-date {
+    white-space: normal;
+  }
+}

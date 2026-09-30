@@ -1,0 +1,62 @@
+<main class="admin-shell">
+  <div class="admin-container">
+    @if (!currentUser) {
+      <section class="login-panel">
+        <a class="back-link" href="#/"><i class="bi bi-arrow-left"></i> Back to Xpertend</a>
+        <div class="login-mark"><i class="bi bi-shield-lock-fill"></i></div>
+        <span class="eyebrow">Private workspace</span>
+        <h1>Admin request desk</h1>
+        <p class="intro">Sign in to view callback requests submitted through Xpertend.</p>
+        <form (ngSubmit)="login()" class="login-form">
+          <label for="username">Username</label>
+          <input id="username" name="username" [ngModel]="username" readonly />
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" [(ngModel)]="password" required autocomplete="current-password" />
+          <button class="primary-button" type="submit" [disabled]="!password || isSigningIn">
+            <i class="bi" [class.bi-box-arrow-in-right]="!isSigningIn" [class.bi-hourglass-split]="isSigningIn"></i>
+            {{ isSigningIn ? 'Signing in...' : 'Sign in' }}
+          </button>
+        </form>
+        @if (errorMessage) { <p class="error-message" role="alert"><i class="bi bi-exclamation-triangle-fill"></i> {{ errorMessage }}</p> }
+      </section>
+    } @else {
+      <header class="admin-header">
+        <div>
+          <a class="back-link" href="#/"><i class="bi bi-arrow-left"></i> Xpertend public desk</a>
+          <span class="eyebrow">Private workspace</span>
+          <h1>Callback requests</h1>
+          <p class="intro">Review and respond to incoming service coordination requests.</p>
+        </div>
+        <div class="header-actions">
+          <button class="secondary-button" type="button" (click)="loadRequests()" [disabled]="isLoading"><i class="bi bi-arrow-clockwise"></i> Refresh</button>
+          <button class="secondary-button" type="button" (click)="logout()"><i class="bi bi-box-arrow-right"></i> Sign out</button>
+        </div>
+      </header>
+
+      @if (errorMessage) { <p class="error-message" role="alert"><i class="bi bi-exclamation-triangle-fill"></i> {{ errorMessage }}</p> }
+      @if (isLoading && !requests.length) {
+        <section class="empty-panel"><i class="bi bi-hourglass-split"></i><p>Loading requests...</p></section>
+      } @else if (!requests.length) {
+        <section class="empty-panel"><i class="bi bi-inbox"></i><h2>No requests yet</h2><p>New callback submissions will appear here.</p></section>
+      } @else {
+        <div class="request-toolbar"><strong>{{ requests.length }} {{ requests.length === 1 ? 'request' : 'requests' }}</strong><span>{{ isLoading ? 'Refreshing...' : 'Newest first' }}</span></div>
+        <section class="request-list" aria-label="Callback requests">
+          @for (request of requests; track request.id) {
+            <article class="request-card">
+              <div class="request-topline">
+                <div><span class="service-label">{{ request.service }}</span><h2>{{ request.name }}</h2></div>
+                <span class="request-date">{{ request.createdAt && $any(request.createdAt).toDate ? ($any(request.createdAt).toDate() | date:'dd MMM yyyy, h:mm a') : 'Date pending' }}</span>
+              </div>
+              <div class="request-details">
+                <a [href]="'tel:' + request.phone"><i class="bi bi-telephone-fill"></i>{{ request.phone }}</a>
+                @if (request.email !== 'Not provided') { <a [href]="'mailto:' + request.email"><i class="bi bi-envelope-fill"></i>{{ request.email }}</a> }
+                <span><i class="bi bi-geo-alt-fill"></i>{{ request.location }}</span>
+              </div>
+              <div class="request-id">ID: {{ request.id }}</div>
+            </article>
+          }
+        </section>
+      }
+    }
+  </div>
+</main>

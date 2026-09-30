@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { firestore } from '../firebase';
 
 @Component({
   selector: 'app-home',
@@ -40,13 +42,68 @@ export class Home {
   ];
   selectedService = '';
   submitted = false;
+  isSubmitting = false;
+  submitError = '';
 
   selectService(service: string): void {
     this.selectedService = service;
     document.getElementById('call-back')?.scrollIntoView({ behavior: 'smooth' });
   }
 
-  submitForm(): void {
-    this.submitted = true;
+  async submitForm(form: NgForm): Promise<void> {
+    if (form.invalid || this.isSubmitting) {
+      return;
+    }
+
+    this.isSubmitting = true;
+    this.submitError = '';
+
+    const formData = form.value as {
+      name: string;
+      phone: string;
+      email?: string;
+      service: string;
+      location: string;
+    };
+    const serviceTitle = this.services.find((service) => service.key === formData.service)?.title ?? formData.service;
+    const emailRows = [
+      ['Name', formData.name],
+      ['Phone', formData.phone],
+      ['Email', formData.email || 'Not provided'],
+      ['Service', serviceTitle],
+      ['Location', formData.location],
+    ]
+      .map(([label, value]) => `<p><strong>${this.escapeHtml(label)}:</strong> ${this.escapeHtml(value)}</p>`)
+      .join('');
+
+    try {
+      await addDoc(collection(firestore, 'mail'), {
+        to: ['xpertend@gmail.com'],
+        message: {
+          subject: `New Xpertend ${serviceTitle} callback request`,
+          html: `<h2>New Xpertend callback request</h2>${emailRows}`,
+        },
+        formData,
+        createdAt: serverTimestamp(),
+      });
+      this.submitted = true;
+      form.resetForm();
+      this.selectedService = '';
+    } catch (error) {
+      console.error('Unable to submit callback request', error);
+      this.submitError = 'We could not send your request. Please try again or contact us directly.';
+    } finally {
+      this.isSubmitting = false;
+    }
+  }
+
+  private escapeHtml(value: string): string {
+    return value.replace(/[&<>'"]/g, (character) => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      "'": '&#39;',
+      '"': '&quot;',
+    })[character] ?? character);
   }
 }

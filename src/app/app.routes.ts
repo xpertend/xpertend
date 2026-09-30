@@ -7,6 +7,11 @@ export const routes: Routes = [
     loadComponent: () => import('./home/home').then((module) => module.Home),
   },
   {
+    path: 'admin',
+    title: 'Xpertend | Admin Requests',
+    loadComponent: () => import('./admin/admin').then((module) => module.Admin),
+  },
+  {
     path: '**',
     redirectTo: '',
   },
