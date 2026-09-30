@@ -1,206 +1,87 @@
-<app-header></app-header>
+<header class="brand-nav sticky-top">
+  <div class="container-fluid container-xl px-3 px-lg-4">
+    <div class="d-flex align-items-center justify-content-between gap-3">
+      <a class="brand-logo-wrap" href="#top" aria-label="Xpertend home">
+        <svg class="brand-mark-svg" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="xpIndigoGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6366F1" /><stop offset="100%" stop-color="#4338CA" /></linearGradient>
+            <linearGradient id="xpAmberGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F59E0B" /><stop offset="100%" stop-color="#D97706" /></linearGradient>
+          </defs>
+          <rect x="15" y="15" width="70" height="70" rx="16" transform="rotate(45 50 50)" stroke="#0284C7" stroke-width="3" stroke-dasharray="6 4" opacity="0.7" />
+          <path d="M24 24L76 76" stroke="url(#xpIndigoGrad)" stroke-width="12" stroke-linecap="round" />
+          <path d="M76 24L24 76" stroke="url(#xpAmberGrad)" stroke-width="12" stroke-linecap="round" />
+          <circle cx="50" cy="50" r="9" fill="#0F172A" />
+          <circle cx="50" cy="50" r="4" fill="#38BDF8" />
+        </svg>
+        <span><strong class="brand-wordmark">XPERT<span>END</span></strong><small class="brand-tagline">Coordination Desk</small></span>
+      </a>
 
-<main class="home-page">
-  <section class="home-hero">
-    <div class="container hero-layout">
-      <div class="hero-content">
-        <span class="eyebrow">
-          <i class="bi bi-stars"></i>
-          Xpertend
-        </span>
-
-        <h1>
-          <span>Find your direction.</span>
-          <strong>Connect with the right expert.</strong>
-        </h1>
-
-        <p>
-          Find the right independent specialist for the questions, services,
-          and support you need.
-        </p>
+      <div class="header-actions d-flex align-items-center flex-shrink-0">
+        <a href="tel:+919876543210" class="contact-badge badge-call"><i class="bi bi-telephone-fill"></i><span class="desktop-only">+91 98765 43210</span><span class="mobile-only">Call</span></a>
+        <a href="mailto:support@xpertend.com" class="contact-badge badge-mail"><i class="bi bi-envelope-fill"></i><span class="desktop-only">support@xpertend.com</span><span class="mobile-only">Email</span></a>
+        <a href="https://wa.me/919876543210" target="_blank" rel="noreferrer" class="contact-badge badge-wa"><i class="bi bi-whatsapp"></i><span class="desktop-only">WhatsApp</span></a>
       </div>
+    </div>
+  </div>
+</header>
 
-      <div class="hero-card" aria-hidden="true">
-        <div class="hero-card-circle circle-one"></div>
-        <div class="hero-card-circle circle-two"></div>
-
-        <div class="hero-card-content">
-          <div class="hero-icon">
-            <i class="bi bi-person-check"></i>
+<main id="top">
+  <section class="hero-section">
+    <div class="container container-xl">
+      <div class="row align-items-center g-4 g-xl-5">
+        <div class="col-12 col-lg-7">
+          <span class="section-badge"><i class="bi bi-lightning-charge-fill"></i> Offline Coordination Specialist</span>
+          <h1>High-Trust Independent Services, Managed Directly.</h1>
+          <p class="hero-copy">Single administrative desk connecting you directly with verified Chartered Accountants, Heavy Equipment site technicians, and Astrology advisors.</p>
+          <div class="row row-cols-3 g-2 g-sm-3 mt-3 mt-lg-4">
+            <div class="col"><div class="trust-item"><i class="bi bi-check-circle-fill"></i><strong>Verified Partners</strong></div></div>
+            <div class="col"><div class="trust-item"><i class="bi bi-clock-history"></i><strong>Rapid Response</strong></div></div>
+            <div class="col"><div class="trust-item"><i class="bi bi-shield-check"></i><strong>Direct Route</strong></div></div>
           </div>
+        </div>
 
-          <span>One simple beginning</span>
-          <strong>Start with what you need.</strong>
-
-          <div class="hero-tags">
-            <span>Organise</span>
-            <span>Connect</span>
-            <span>Begin</span>
+        <div class="col-12 col-lg-5" id="call-back">
+          <div class="form-card">
+            <h2>Request Service Coordination</h2>
+            <p>Provide details below for a direct callback.</p>
+            @if (!submitted) {
+              <form #leadForm="ngForm" (ngSubmit)="submitForm()" class="row g-2">
+                <div class="col-12"><label for="name" class="form-label">Full Name *</label><input id="name" name="name" type="text" class="form-control" placeholder="e.g. Vikramaditya Roy" required ngModel /></div>
+                <div class="col-12"><label for="phone" class="form-label">Phone Number *</label><input id="phone" name="phone" type="tel" class="form-control" placeholder="e.g. +91 98765 43210" required ngModel /></div>
+                <div class="col-12"><label for="email" class="form-label">Email Address (Optional)</label><input id="email" name="email" type="email" class="form-control" placeholder="e.g. name@domain.com" ngModel /></div>
+                <div class="col-12"><label for="service" class="form-label">Service Vertical *</label><select id="service" name="service" class="form-select" required [(ngModel)]="selectedService"><option value="" disabled>Choose service category...</option><option value="ca">CA Connect (GST, Income Tax &amp; Audits)</option><option value="heavy">Heavy Machinery (Rentals, Maintenance &amp; Parts)</option><option value="astrology">Astrology Connect (Kundali, Vastu &amp; Advice)</option></select></div>
+                <div class="col-12"><label for="location" class="form-label">Location / City *</label><input id="location" name="location" type="text" class="form-control" placeholder="e.g. Kolkata / Yard Location" required ngModel /></div>
+                <div class="col-12"><button class="btn btn-gradient w-100" type="submit" [disabled]="leadForm.invalid"><i class="bi bi-send-fill"></i> Submit Callback Request</button></div>
+              </form>
+            } @else {
+              <div class="status-alert" role="status"><i class="bi bi-check-circle-fill"></i> Request received. A coordinator will reach out shortly.</div>
+            }
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="services-section">
-    <div class="container">
-      <div class="section-heading">
-        <span class="heading-label">Explore Xpertend</span>
-
-        <h2>Meet the right guidance for your journey</h2>
-
-        <p>
-          Choose the area where you need support and take the next step with
-          greater clarity.
-        </p>
-      </div>
-
-      <div class="service-grid">
-        <article class="service-card ca-card">
-          <div class="service-icon">
-            <i class="bi bi-calculator"></i>
-          </div>
-
-          <span class="service-label">Financial support</span>
-
-          <h3>CA Xpertend</h3>
-
-          <p>
-            Connect with an independent Chartered Accountant firm for
-            accounting, tax, compliance, reporting, and business support.
-          </p>
-
-          <a class="service-link" routerLink="/ca-xpertend">
-            Explore CA support
-            <i class="bi bi-arrow-up-right"></i>
-          </a>
-        </article>
-
-        <article class="service-card astrology-card">
-          <div class="service-icon">
-            <i class="bi bi-stars"></i>
-          </div>
-
-          <span class="service-label">Personal guidance</span>
-
-          <h3>Astrology Xpertend</h3>
-
-          <p>
-            Organise your questions and connect with an independent astrologer
-            for thoughtful guidance and perspective.
-          </p>
-
-          <a class="service-link" routerLink="/astrology-xpertend">
-            Explore astrology
-            <i class="bi bi-arrow-up-right"></i>
-          </a>
-        </article>
-
-        <article class="service-card heavy-card">
-          <div class="service-icon">
-            <i class="bi bi-truck-front"></i>
-          </div>
-
-          <span class="service-label">Equipment support</span>
-
-          <h3>Heavy Xpertend</h3>
-
-          <p>
-            Share your earth moving vehicle requirement and connect with an
-            independent equipment partner for your project.
-          </p>
-
-          <a class="service-link" routerLink="/heavy-xpertend">
-            Explore equipment support
-            <i class="bi bi-arrow-up-right"></i>
-          </a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="role-section">
-    <div class="container">
-      <div class="role-card">
-        <div class="role-content">
-          <span class="heading-label">Our role is simple</span>
-
-          <h2>We help you begin with clarity.</h2>
-
-          <p>
-            Xpertend helps you organise what you are looking for and connect
-            with an independent specialist. You can then discuss your
-            requirement directly with the selected partner.
-          </p>
-        </div>
-
-        <div class="role-points">
-          <div class="role-point">
-            <span>01</span>
-
-            <div>
-              <h3>Understand your need</h3>
-              <p>Start with the area where you need support.</p>
-            </div>
-          </div>
-
-          <div class="role-point">
-            <span>02</span>
-
-            <div>
-              <h3>Find the right direction</h3>
-              <p>Explore a specialist area that fits your requirement.</p>
-            </div>
-          </div>
-
-          <div class="role-point">
-            <span>03</span>
-
-            <div>
-              <h3>Connect independently</h3>
-              <p>Continue the conversation directly with the partner.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="beginning-section">
-    <div class="container">
-      <div class="section-heading centered-heading">
-        <span class="heading-label">A simple beginning</span>
-
-        <h2>One clear step at a time</h2>
-      </div>
-
-      <div class="beginning-grid">
-        <article class="beginning-card">
-          <span class="step-number">01</span>
-          <i class="bi bi-chat-square-text"></i>
-
-          <h3>Share your question</h3>
-          <p>Begin with the service or support you are looking for.</p>
-        </article>
-
-        <article class="beginning-card">
-          <span class="step-number">02</span>
-          <i class="bi bi-compass"></i>
-
-          <h3>Choose your area</h3>
-          <p>Explore the specialist category that fits your requirement.</p>
-        </article>
-
-        <article class="beginning-card">
-          <span class="step-number">03</span>
-          <i class="bi bi-arrow-right-circle"></i>
-
-          <h3>Take the next step</h3>
-          <p>Connect directly with an independent specialist.</p>
-        </article>
+  <section class="services-section" id="services">
+    <div class="container container-xl">
+      <div class="section-heading mb-4 mb-lg-5"><span class="section-badge amber-badge">Service Verticals</span><h2>Independent Partner Desks</h2><p>Select a service to request callback or initiate WhatsApp consultation directly.</p></div>
+      <div class="row row-cols-1 row-cols-lg-3 g-4">
+        @for (service of services; track service.key) {
+          <div class="col"><article class="vibrant-card h-100"><div class="icon-badge" [class]="service.iconClass"><i [class]="service.icon"></i></div><h3>{{ service.title }}</h3><p>{{ service.description }}</p><ul>@for (item of service.items; track item) {<li><i class="bi bi-check-circle-fill"></i> {{ item }}</li>}</ul><div class="card-actions mt-auto"><button type="button" (click)="selectService(service.key)" class="btn btn-outline-dark"><i class="bi bi-pencil-square"></i> {{ service.action }}</button><a href="https://wa.me/919876543210" target="_blank" rel="noreferrer" class="btn btn-card-wa"><i class="bi bi-whatsapp"></i> WhatsApp Desk</a></div></article></div>
+  }
       </div>
     </div>
   </section>
 </main>
 
-<app-footer></app-footer>
+<footer class="site-footer">
+  <div class="container container-xl">
+    <div class="row g-4">
+      <div class="col-12 col-lg-4"><div class="footer-brand">XPERT<span>END</span></div><p>Xpertend acts as a unified administrative desk connecting individuals and enterprise clients directly with certified Chartered Accountants, heavy machinery site dispatch technicians, and professional Astrology advisors.</p><span class="desk-hours"><i class="bi bi-clock-history"></i> Desk Hours: Mon - Sat (9 AM - 8 PM)</span></div>
+      <div class="col-6 col-md-4 col-lg-2"><h2>Services</h2><a href="#services" (click)="selectService('ca')">CA Connect Desk</a><a href="#services" (click)="selectService('heavy')">Heavy Machinery Dispatch</a><a href="#services" (click)="selectService('astrology')">Astrology Consultation</a><a href="#call-back">Request Callback</a></div>
+      <div class="col-6 col-md-4 col-lg-3"><h2>Direct Reach</h2><p><i class="bi bi-telephone"></i><a href="tel:+919876543210">+91 98765 43210</a></p><p><i class="bi bi-envelope"></i><a href="mailto:support@xpertend.com">support@xpertend.com</a></p><p><i class="bi bi-geo-alt"></i>Kolkata, West Bengal, India</p></div>
+      <div class="col-12 col-md-4 col-lg-3"><h2>Immediate Support</h2><p>Need immediate dispatch or emergency CA support? Connect live on WhatsApp.</p><a class="btn footer-whatsapp w-100" href="https://wa.me/919876543210" target="_blank" rel="noreferrer"><i class="bi bi-whatsapp"></i> Chat With Coordinator</a></div>
+    </div>
+    <div class="footer-bottom mt-4 pt-3">© 2026 Xpertend Coordination Desk. All rights reserved.</div>
+  </div>
+</footer>

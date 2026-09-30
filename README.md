@@ -1,59 +1,87 @@
-# AngularApp
+# Xpertend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.24.
+Xpertend is an expert offline coordination desk. It helps clients connect directly with independent professionals across accounting, heavy machinery, and astrology services.
 
-## Development server
+The app presents a responsive single-page experience with service discovery, direct contact actions, and a callback request form.
 
-To start a local development server, run:
+## Service desks
 
-```bash
-ng serve
-```
+- **CA Connect**: GST registration, tax filing, audits, ROC filings, and incorporation support.
+- **Heavy Machinery**: Equipment rentals, field repairs, overhauls, and spare parts dispatch.
+- **Astrology Connect**: Kundali analysis, matchmaking, timing guidance, Vastu planning, and consultations.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Features
 
-## Code scaffolding
+- Responsive coordination-desk landing page for desktop and mobile.
+- Direct phone, email, and WhatsApp contact links.
+- Callback form with name, phone, email, service, and location fields.
+- Service buttons that select a category and scroll to the callback form.
+- Client-side success state after a valid callback form submission.
+- Bootstrap 5 and Bootstrap Icons for layout and interface icons.
+- Outfit and Inter typography with Xpertend brand styling.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+> The callback form currently provides a client-side confirmation only. Connect it to a backend or form service before using it to collect production requests.
 
-```bash
-ng generate component component-name
-```
+## Tech stack
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- Angular 21 with standalone components
+- Angular Router with a single application route (`/`)
+- Angular Forms with template-driven form bindings
+- TypeScript
+- Bootstrap 5
+- Bootstrap Icons
+- Vitest through the Angular test runner
 
-```bash
-ng generate --help
-```
+## Getting started
 
-## Building
+### Requirements
 
-To build the project run:
+- Node.js compatible with the project dependencies
+- npm 11 or later
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+### Install dependencies
 
 ```bash
-ng e2e
+npm install
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### Start the development server
 
-## Additional Resources
+```bash
+npm start
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Open `http://localhost:4200/` in a browser. The app reloads automatically as source files change.
+
+## Available commands
+
+| Command | Description |
+| --- | --- |
+| `npm start` | Start the Angular development server. |
+| `npm run build` | Create an optimized production build in `dist/`. |
+| `npm run watch` | Rebuild continuously using the development configuration. |
+| `npm test` | Run the unit tests with Vitest. |
+
+## Project structure
+
+```text
+src/
+	app/
+		home/
+			home.html    # Single-page coordination desk UI
+			home.css     # Responsive Xpertend design system
+			home.ts      # Service data and form interactions
+		app.routes.ts  # Single route with fallback redirect
+	index.html       # Page metadata and font loading
+	styles.css       # Global Bootstrap, icon, and typography styles
+```
+
+## Testing
+
+Run the unit tests once without watch mode:
+
+```bash
+npm test -- --watch=false
+```
+
+The current test suite verifies that the root application component is created and renders its router outlet.
